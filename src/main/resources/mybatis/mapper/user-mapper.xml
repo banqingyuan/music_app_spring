@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nolimits.mapper.UserMapper" >
+    <resultMap id="BaseResultMap" type="com.nolimits.model.User" >
+        <id column="UserId" property="UserId" jdbcType="INTEGER" />
+        <result column="UserName" property="userName" jdbcType="VARCHAR" />
+        <result column="PassWord" property="passWord" jdbcType="VARCHAR" />
+        <result column="Sex" property="sex" jdbcType="VARCHAR"/>
+        <result column="Age" property="age" jdbcType="INTEGER"/>
+        <result column="Sign" property="sign" jdbcType="VARCHAR" />
+        <result column="Icon_Url" property="iconUrl" jdbcType="VARCHAR" />
+        <result column="Birthday" property="birthday" jdbcType="VARCHAR" />
+        <result column="Location" property="location" jdbcType="VARCHAR" />
+        <result column="Tag" property="tag" jdbcType="VARCHAR" />
+        <result column="Verify" property="verify" jdbcType="VARCHAR" />
+        <result column="Watch" property="watch" jdbcType="VARCHAR" />
+        <result column="Be_Watched" property="beWatched" jdbcType="VARCHAR" />
+        <result column="Colect_List" property="collectList" jdbcType="VARCHAR" />
+        <result column="Work_List" property="workList" jdbcType="VARCHAR" />
+        <result column="User_Time_Stamp" property="userTimeStamp" jdbcType="java.sql.Timestamp" />
+    </resultMap>
+</mapper>
