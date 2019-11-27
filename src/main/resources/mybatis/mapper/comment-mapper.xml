@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nolimits.mapper.CommentMapper" >
+    <resultMap id="Comment_ResultMap" type="com.nolimits.bean.Comment">
+        <id column="Comment_Id" jdbcType="INTEGER" property="commentId" />
+        <result column="User_Id" property="userId" jdbcType="INTEGER"/>
+        <result column="Works_Id" property="worksId" jdbcType="INTEGER"/>
+        <result column="Date" property="date" jdbcType="VARCHAR"/>
+        <result column="Content" property="content" jdbcType="VARCHAR"/>
+        <result column="TimeStamp" property="timeStamp" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+</mapper>

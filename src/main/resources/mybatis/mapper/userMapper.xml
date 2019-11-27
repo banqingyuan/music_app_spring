@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.nolimits.mapper.UserMapper" >
-    <resultMap id="BaseResultMap" type="com.nolimits.model.User" >
-        <id column="UserId" property="UserId" jdbcType="INTEGER" />
+    <resultMap id="User_ResultMap" type="com.nolimits.bean.User" >
+        <id column="UserId" property="userId" jdbcType="INTEGER" />
         <result column="UserName" property="userName" jdbcType="VARCHAR" />
         <result column="PassWord" property="passWord" jdbcType="VARCHAR" />
         <result column="Sex" property="sex" jdbcType="VARCHAR"/>
@@ -15,8 +15,22 @@
         <result column="Verify" property="verify" jdbcType="VARCHAR" />
         <result column="Watch" property="watch" jdbcType="VARCHAR" />
         <result column="Be_Watched" property="beWatched" jdbcType="VARCHAR" />
-        <result column="Colect_List" property="collectList" jdbcType="VARCHAR" />
+        <result column="Collect_List" property="collectList" jdbcType="VARCHAR" />
         <result column="Work_List" property="workList" jdbcType="VARCHAR" />
         <result column="User_Time_Stamp" property="userTimeStamp" jdbcType="java.sql.Timestamp" />
     </resultMap>
+
+    <sql id="User_Base_Column_List">
+        UserId,Sex,Age,Sign,Icon_Url,Birthday,Location,Tag,Verify,Watch,Be_Watched,Collect_List,Work_List,User_Time_Stamp
+    </sql>
+
+    <select id="GetUser" resultMap="User_ResultMap">
+        SELECT
+        <include refid="User_Base_Column_List"/>
+        From user
+        WHERE UserId = #{userId}
+    </select>
+
+
+
 </mapper>

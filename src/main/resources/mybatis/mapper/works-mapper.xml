@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nolimits.mapper.WorksMapper" >
+    <resultMap id="works_resultMap" type="com.nolimits.bean.Works">
+        <id column="Work_Id" jdbcType="INTEGER"/>
+        <result column="Type" jdbcType="VARCHAR"/>
+        <result column="User_Id" jdbcType="INTEGER"/>
+        <result column="Title" jdbcType="VARCHAR"/>
+        <result column="Content" jdbcType="VARCHAR"/>
+        <result column="Date" jdbcType="VARCHAR"/>
+        <result column="Approve_List" jdbcType="VARCHAR"/>
+        <result column="Works_Time_Stamp" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    
+</mapper>
