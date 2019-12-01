@@ -1,6 +1,6 @@
 package com.nolimits.bean;
 
-public class Works {
+public class Work {
     private Integer workId;
     private String type;
     private Integer userId;

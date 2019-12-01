@@ -17,14 +17,13 @@
         <result column="Be_Watched" property="beWatched" jdbcType="VARCHAR" />
         <result column="Collect_List" property="collectList" jdbcType="VARCHAR" />
         <result column="Work_List" property="workList" jdbcType="VARCHAR" />
-        <result column="User_Time_Stamp" property="userTimeStamp" jdbcType="java.sql.Timestamp" />
     </resultMap>
 
     <sql id="User_Base_Column_List">
-        UserId,Sex,Age,Sign,Icon_Url,Birthday,Location,Tag,Verify,Watch,Be_Watched,Collect_List,Work_List,User_Time_Stamp
+        UserId,UserName,Sex,Age,Sign,Icon_Url,Birthday,Location,Tag,Verify,Watch,Be_Watched,Collect_List,Work_List
     </sql>
 
-    <select id="GetUser" resultMap="User_ResultMap">
+    <select id="get_User" resultMap="User_ResultMap">
         SELECT
         <include refid="User_Base_Column_List"/>
         From user

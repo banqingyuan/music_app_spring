@@ -9,5 +9,13 @@
         <result column="Content" property="content" jdbcType="VARCHAR"/>
         <result column="TimeStamp" property="timeStamp" jdbcType="TIMESTAMP"/>
     </resultMap>
-
+    <sql id="Comment_Base_Column_List">
+        Comment_Id,User_Id,Works_Id,Date,Content
+    </sql>
+    <select id="get_Comment" resultMap="Comment_ResultMap">
+        SELECT
+        <include refid="Comment_Base_Column_List"/>
+        From comment
+        WHERE Works_Id = #{workId}
+    </select>
 </mapper>

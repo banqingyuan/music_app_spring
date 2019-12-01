@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.nolimits.mapper.WorksMapper" >
-    <resultMap id="works_resultMap" type="com.nolimits.bean.Works">
-        <id column="Work_Id" jdbcType="INTEGER"/>
-        <result column="Type" jdbcType="VARCHAR"/>
-        <result column="User_Id" jdbcType="INTEGER"/>
-        <result column="Title" jdbcType="VARCHAR"/>
-        <result column="Content" jdbcType="VARCHAR"/>
-        <result column="Date" jdbcType="VARCHAR"/>
-        <result column="Approve_List" jdbcType="VARCHAR"/>
-        <result column="Works_Time_Stamp" jdbcType="TIMESTAMP"/>
+    <resultMap id="Works_ResultMap" type="com.nolimits.bean.Work">
+        <id column="Work_Id" property="workId" jdbcType="INTEGER"/>
+        <result column="Type" property="type" jdbcType="VARCHAR"/>
+        <result column="User_Id" property="userId" jdbcType="INTEGER"/>
+        <result column="Title" property="title" jdbcType="VARCHAR"/>
+        <result column="Content" property="content" jdbcType="VARCHAR"/>
+        <result column="Date" property="date" jdbcType="VARCHAR"/>
+        <result column="Approve_List" property="approveList" jdbcType="VARCHAR"/>
+<!--     如果不写property，则bean中的get方法将无法找到对应的项-->
     </resultMap>
-    
+    <sql id="Works_Base_Column_List">
+        Work_Id,Type,User_Id,Title,Content,Date,Approve_List
+    </sql>
+    <select id="get_Work" resultMap="Works_ResultMap">
+        SELECT
+        <include refid="Works_Base_Column_List"/>
+        From works
+        WHERE Work_Id = #{workId}
+    </select>
 </mapper>

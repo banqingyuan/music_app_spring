@@ -19,15 +19,20 @@ public class User implements Serializable {
     private String beWatched;
     private String collectList;
     private Timestamp userTimeStamp;
-
+    private String workList;
     public User() {
         super();
     }
+
 
     public User(String userName, String passWord) {
         super();
         this.passWord = passWord;
         this.userName = userName;
+    }
+
+    public void setWorkList(String workList) {
+        this.workList = workList;
     }
 
     public void setAge(Integer age) {
@@ -124,6 +129,10 @@ public class User implements Serializable {
 
     public String getIconUrl() {
         return iconUrl;
+    }
+
+    public String getWorkList() {
+        return workList;
     }
 
     public String getLocation() {
